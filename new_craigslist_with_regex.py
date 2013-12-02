@@ -60,7 +60,7 @@ print """
 """
 for line in html:
    #print line
-   m = re.search(' <p class="row" data-latitude="((-)?[0-9]+(\.[0-9]+)?)" data-longitude="((-)?[0-9]+(\.[0-9]+)?)" .* <a href="(/apa/.*.html)" .*<small>(.*([Pp]aradise|[Uu]nser|[Ii]rving|[Pp]aseo|[Uu]niverse|[Gg]olf [Cc]ourse).*)</small>',line)
+   m = re.search(' <p class="row" data-latitude="((-)?[0-9]+(\.[0-9]+)?)" data-longitude="((-)?[0-9]+(\.[0-9]+)?)" .* <a href="(/apa/.*.html)" .*<small>(.*([Pp]aradise|[Uu]nser|[Ii]rving|[Pp]aseo|[Uu]niverse|[Gg]olf [Cc]ourse|[Ee]llison|[vV]entana|[nN]orth [vV]alley).*)</small>',line)
    #print "HI"
    if m:
       # This is the latitude Stuff
@@ -68,7 +68,7 @@ for line in html:
       print '            <td>' + m.group(1) # First Match is the Data Latitude
       print '            <td>' + m.group(4) # First Match is the Data Longitude
       print '            <td>' + m.group(8) # First Match is the Data Location
-      print '            <td><a href="' + m.group(7) + '">Take a look</a>'# First Match is the Data Latitude
+      print '            <td><a href="http://albuquerque.craigslist.com' + m.group(7) + '">Take a look</a>'# First Match is the Data Latitude
       print '         </tr>'
       
 print """
